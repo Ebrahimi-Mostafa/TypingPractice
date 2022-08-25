@@ -25,8 +25,9 @@ def menu_start():
 
 menu_start()
 rand_char = random.choice(char_list)
-print(rand_char)
+
 while(True):
+    print(rand_char)
     data = input()
     if data == 'finish':
         menu_start()
@@ -34,7 +35,5 @@ while(True):
         print('\033[5;32m\u2713 \033[0;0m')
     else:
         print('\033[5;91mX \033[0;0m')
-        print(rand_char)
         continue
     rand_char = random.choice(char_list)
-    print(rand_char)
