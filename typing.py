@@ -26,9 +26,11 @@ def menu_start():
             char_list.append(b)
             print(colorama.Fore.BLUE + str(char_list))
         print(colorama.Fore.BLUE + '\nyou chose ' + str(char_list))
-        print(colorama.Fore.BLUE + "for back to menu, type 'finish'\n")
+        print(colorama.Fore.BLUE + "for back to menu, type 'finish'")
     elif a == 4:
         exit()
+
+    print() #just for new line
 
 menu_start()
 rand_char = random.choice(char_list)
