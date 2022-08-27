@@ -17,16 +17,16 @@ def menu_start():
     elif a == 2: 
         char_list = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+','`', '~', '[', ']', '{', '}', '|', ':', ';', '<', '>', ',', '.', '/', '?', '"', '\\', "'", '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
     elif a == 3:
-        print("type finish, if you don't want add new char")
+        print(colorama.Fore.BLUE + "type finish, if you don't want add new char")
         char_list = []
         while(True):
             b = input()
             if b == "finish":
                 break
             char_list.append(b)
-            print(char_list)
-        print('\n\nyou chose ', char_list)
-        print("\nfor back to menu, type 'finish'\n", '\033[0;0m')
+            print(colorama.Fore.BLUE + str(char_list))
+        print(colorama.Fore.BLUE + '\nyou chose ' + str(char_list))
+        print(colorama.Fore.BLUE + "for back to menu, type 'finish'\n")
     elif a == 4:
         exit()
 
