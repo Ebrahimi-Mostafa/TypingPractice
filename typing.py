@@ -3,7 +3,7 @@ char_list = []
 
 def menu_start():
     global char_list
-    a = int(input('\033[1;34mwelcome\nchoose one of the options below:\n \033[1;36m\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n'))
+    a = int(input('\033[1;34mwelcome\nchoose one of the options below:\n \033[1;36m\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit'))
 
     if a == 0:
         char_list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
@@ -22,6 +22,8 @@ def menu_start():
             print(char_list)
     print('\n\nyou chose ', char_list)
     print("\nfor back to menu, type 'finish'\n", '\033[0;0m')
+    elif a == 4:
+        exit()
 
 menu_start()
 rand_char = random.choice(char_list)
