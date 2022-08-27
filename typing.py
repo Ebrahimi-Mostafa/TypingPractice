@@ -6,8 +6,8 @@ char_list = []
 
 def menu_start():
     global char_list
-    print("\033[1;34mwelcome\nchoose one of the options below:\n \033") ## print welcome message
-    print("[1;36m\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit\n") ## print menu options
+    print(colorama.Fore.MAGENTA + "welcome\nchoose one of the options below:") ## print welcome message
+    print(colorama.Fore.CYAN + "\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit") ## print menu options
     a = int(input())
 
     if a == 0:
