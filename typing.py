@@ -3,7 +3,9 @@ char_list = []
 
 def menu_start():
     global char_list
-    a = int(input('\033[1;34mwelcome\nchoose one of the options below:\n \033[1;36m\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit\n'))
+    print("\033[1;34mwelcome\nchoose one of the options below:\n \033") ## print welcome message
+    print("[1;36m\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit\n") ## print menu options
+    a = int(input())
 
     if a == 0:
         char_list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
