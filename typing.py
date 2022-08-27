@@ -1,4 +1,7 @@
 import random
+import colorama # for print colorful text
+colorama.init(autoreset=True) #for reset color of text in terminal
+
 char_list = []
 
 def menu_start():
