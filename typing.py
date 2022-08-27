@@ -25,8 +25,8 @@ def menu_start():
                 break
             char_list.append(b)
             print(colorama.Fore.BLUE + str(char_list))
-        print(colorama.Fore.BLUE + '\nyou chose ' + str(char_list))
-        print(colorama.Fore.BLUE + "for back to menu, type 'finish'")
+        print(colorama.Fore.YELLOW + '\nyou chose ' + str(char_list))
+        print(colorama.Fore.YELLOW + "for back to menu, type 'finish'")
     elif a == 4:
         exit()
 
