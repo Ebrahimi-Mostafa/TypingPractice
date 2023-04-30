@@ -32,6 +32,10 @@ pip install --upgrade pip
 ```bash
 python TypingPractice.py
 ```
+or
+```bash
+python3 TypingPractice.py
+```
 
 3. Follow the on-screen instructions to choose a character set and start practicing typing.
 
