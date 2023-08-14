@@ -1,11 +1,10 @@
 import random
 import colorama # for print colorful text
-colorama.init(autoreset=True) #for reset color of text in terminal
 
-char_list = []
+colorama.init(autoreset=True) #for reset color of text in terminal after each print
 
 def menu_start():
-    global char_list
+    char_list = []
     print(colorama.Fore.MAGENTA + "welcome\nchoose one of the options below:") ## print welcome message
     print(colorama.Fore.CYAN + "\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit") ## print menu options
     a = int(input())
@@ -31,18 +30,23 @@ def menu_start():
         exit()
 
     print() #just for new line
+    return char_list
 
-menu_start()
-rand_char = random.choice(char_list)
+def main():
+    while True:
+        char_list = menu_start()
+        rand_char = random.choice(char_list)
+        while True:
+            print(rand_char)
+            data = input()
+            if data == 'finish':
+                break
+            elif data == rand_char:
+                print('\033[5;32m\u2713 \033[0;0m')
+            else:
+                print('\033[5;91mX \033[0;0m')
+                continue
+            rand_char = random.choice(char_list)
 
-while(True):
-    print(rand_char)
-    data = input()
-    if data == 'finish':
-        menu_start()
-    elif data == rand_char:
-        print('\033[5;32m\u2713 \033[0;0m')
-    else:
-        print('\033[5;91mX \033[0;0m')
-        continue
-    rand_char = random.choice(char_list)
+if __name__ == "__main__":
+    main()
