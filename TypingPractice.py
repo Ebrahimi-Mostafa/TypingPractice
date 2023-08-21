@@ -43,10 +43,10 @@ def main():
         rand_char = random.choice(practice_set)
         while True:
             print(rand_char)
-            data = input()
-            if data == 'finish':
+            practice_input = input()
+            if practice_input == 'finish':
                 break
-            elif data == rand_char:
+            elif practice_input == rand_char:
                 print('\033[5;32m\u2713 \033[0;0m')
                 rand_char = random.choice(practice_set)
             else:
