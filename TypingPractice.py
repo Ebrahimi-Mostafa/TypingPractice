@@ -1,18 +1,15 @@
 import random
 import colorama # for print colorful text
 
-
 colorama.init(autoreset=True) #for reset color of text in terminal after each print
-
 
 NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 SIGNS = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+','`', '~', '[', ']', '{', '}', '|', ':', ';', '<', '>', ',', '.', '/', '?', '"', '\\', "'"]
 
-
 def menu_start():
     practice_set = []
-    print(colorama.Fore.MAGENTA + "welcome\nchoose one of the options below:") ## print welcome message
-    print(colorama.Fore.CYAN + "\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit") ## print menu options
+    print(colorama.Fore.MAGENTA + "Welcome!\nChoose one of the options below:") ## print welcome message
+    print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Both of them\n\t3. Custom list\n\t4. Exit") ## print menu options
     menu_selection = int(input())
 
     if menu_selection == 0:
@@ -22,19 +19,19 @@ def menu_start():
     elif menu_selection == 2: 
         practice_set = NUMBERS + SIGNS
     elif menu_selection == 3:
-        print(colorama.Fore.BLUE + "type finish, if you don't want add new char")
+        print(colorama.Fore.BLUE + "Type 'finish' if you don't want to add new characters")
         practice_set = []
-        while(True):
+        while True:
             char_input = input()
             if char_input == "finish":
                 break
             practice_set.append(char_input)
             print(colorama.Fore.BLUE + str(practice_set))
-        print(colorama.Fore.YELLOW + '\nyou chose ' + str(practice_set))
+        print(colorama.Fore.YELLOW + '\nYou chose ' + str(practice_set))
     elif menu_selection == 4:
         exit()
 
-    print(f"for back to menu, type {colorama.Fore.RED}finish\n")
+    print(f"For back to the menu, type {colorama.Fore.RED}'finish'\n")
     return practice_set
 
 def main():
@@ -51,7 +48,6 @@ def main():
                 rand_char = random.choice(practice_set)
             else:
                 print('\033[5;91mX \033[0;0m')
-
 
 if __name__ == "__main__":
     main()
