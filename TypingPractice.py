@@ -13,25 +13,25 @@ def menu_start():
     char_list = []
     print(colorama.Fore.MAGENTA + "welcome\nchoose one of the options below:") ## print welcome message
     print(colorama.Fore.CYAN + "\t0.numbers\n\t1.signs\n\t2.both of them\n\t3.custom list\n\t4.exit") ## print menu options
-    a = int(input())
+    menu_selection = int(input())
 
-    if a == 0:
+    if menu_selection == 0:
         char_list = NUMBERS
-    elif a == 1:
+    elif menu_selection == 1:
         char_list = SIGNS
-    elif a == 2: 
+    elif menu_selection == 2: 
         char_list = NUMBERS + SIGNS
-    elif a == 3:
+    elif menu_selection == 3:
         print(colorama.Fore.BLUE + "type finish, if you don't want add new char")
         char_list = []
         while(True):
-            b = input()
-            if b == "finish":
+            char_input = input()
+            if char_input == "finish":
                 break
-            char_list.append(b)
+            char_list.append(char_input)
             print(colorama.Fore.BLUE + str(char_list))
         print(colorama.Fore.YELLOW + '\nyou chose ' + str(char_list))
-    elif a == 4:
+    elif menu_selection == 4:
         exit()
 
     print(f"for back to menu, type {colorama.Fore.RED}finish\n")
