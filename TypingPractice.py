@@ -1,33 +1,40 @@
 import random
-import colorama # for print colorful text
+# for print colorful text
+import colorama
 
-colorama.init(autoreset=True) #for reset color of text in terminal after each print
+# Initialize colorama for colorful text printing
+colorama.init(autoreset=True)
 
 NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-SIGNS = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+','`', '~', '[', ']', '{', '}', '|', ':', ';', '<', '>', ',', '.', '/', '?', '"', '\\', "'"]
+SIGNS = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+', '`', '~', '[', ']', '{', '}', '|', ':', ';', '<', '>', ',', '.', '/', '?', '"', '\\', "'"]
+
+def get_custom_char_set():
+    print(colorama.Fore.BLUE + "Type 'finish' if you don't want to add new characters")
+    custom_set = []
+    while True:
+        char_input = input()
+        if char_input == "finish":
+            break
+        custom_set.append(char_input)
+        print(colorama.Fore.BLUE + str(custom_set))
+    print(colorama.Fore.YELLOW + '\nYou chose ' + str(custom_set))
+    return custom_set
 
 def menu_start():
-    practice_set = []
-    print(colorama.Fore.MAGENTA + "Welcome!\nChoose one of the options below:") ## print welcome message
-    print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Both of them\n\t3. Custom list\n\t4. Exit") ## print menu options
+    print(colorama.Fore.MAGENTA + "Welcome!\nChoose one of the options below:")
+    print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Both of them\n\t3. Custom list\n\t4. Exit")
+    
     menu_selection = int(input())
+    practice_set = []
 
     if menu_selection == 0:
         practice_set = NUMBERS
     elif menu_selection == 1:
         practice_set = SIGNS
-    elif menu_selection == 2: 
+    elif menu_selection == 2:
         practice_set = NUMBERS + SIGNS
     elif menu_selection == 3:
-        print(colorama.Fore.BLUE + "Type 'finish' if you don't want to add new characters")
-        practice_set = []
-        while True:
-            char_input = input()
-            if char_input == "finish":
-                break
-            practice_set.append(char_input)
-            print(colorama.Fore.BLUE + str(practice_set))
-        print(colorama.Fore.YELLOW + '\nYou chose ' + str(practice_set))
+        practice_set = get_custom_char_set()
     elif menu_selection == 4:
         exit()
 
@@ -38,9 +45,11 @@ def main():
     while True:
         practice_set = menu_start()
         rand_char = random.choice(practice_set)
+        
         while True:
             print(rand_char)
             practice_input = input()
+            
             if practice_input == 'finish':
                 break
             elif practice_input == rand_char:
