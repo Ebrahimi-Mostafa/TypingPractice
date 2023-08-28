@@ -8,8 +8,8 @@ CHECK_MARK = "\u2713"
 # Initialize colorama for colorful text printing
 colorama.init(autoreset=True)
 
-NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-SIGNS = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+', '`', '~', '[', ']', '{', '}', '|', ':', ';', '<', '>', ',', '.', '/', '?', '"', '\\', "'"]
+NUMBERS = '1234567890'
+SIGNS = '!@#$%^&*()-=_+`~[]{}|:;<>,./?"\\\''
 
 def get_custom_char_set():
     print(colorama.Fore.BLUE + "Type 'finish' if you don't want to add new characters")
