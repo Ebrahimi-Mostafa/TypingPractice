@@ -2,6 +2,8 @@ import random
 # for print colorful text
 import colorama
 
+CHECK_MARK = "\u2713"
+
 # Initialize colorama for colorful text printing
 colorama.init(autoreset=True)
 
@@ -53,10 +55,10 @@ def main():
             if practice_input == 'finish':
                 break
             elif practice_input == rand_char:
-                print('\033[5;32m\u2713 \033[0;0m')
+                print(f"{colorama.Fore.GREEN}{CHECK_MARK}")
                 rand_char = random.choice(practice_set)
             else:
-                print('\033[5;91mX \033[0;0m')
+                print(f"{colorama.Fore.RED}X")
 
 if __name__ == "__main__":
     main()
