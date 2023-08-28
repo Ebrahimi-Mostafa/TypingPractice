@@ -2,6 +2,7 @@ import random
 # for print colorful text
 import colorama
 
+# Unicode CHECK MARK symbol
 CHECK_MARK = "\u2713"
 
 # Initialize colorama for colorful text printing
@@ -13,12 +14,22 @@ SIGNS = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '_', '+', '
 def get_custom_char_set():
     print(colorama.Fore.BLUE + "Type 'finish' if you don't want to add new characters")
     custom_set = []
+    
     while True:
         char_input = input()
+        
         if char_input == "finish":
+            if not custom_set:
+                print(f"{colorama.Fore.RED}You must enter at least one character before finishing.")
+                continue
             break
+        elif char_input == "":
+            print(f"{colorama.Fore.RED}Oops! It looks like you didn't enter any characters. Please provide at least one character.")
+            continue
+        
         custom_set.append(char_input)
         print(colorama.Fore.BLUE + str(custom_set))
+    
     print(colorama.Fore.YELLOW + '\nYou chose ' + str(custom_set))
     return custom_set
 
