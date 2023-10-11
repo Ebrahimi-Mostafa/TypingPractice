@@ -2,7 +2,6 @@ import random
 # for print colorful text
 import colorama
 
-# Unicode CHECK MARK symbol
 CHECK_MARK = "\u2713"
 
 # Reset color after each print
@@ -34,7 +33,7 @@ def get_custom_char_set():
     return custom_set
 
 def get_size_of_output():
-    print(colorama.Fore.CYAN + "Enter the size of random word:")
+    print(colorama.Fore.CYAN + "Enter the size of the random word:")
     size = int(input())
     while size <= 0:
         print(colorama.Fore.RED + "Size must be a positive integer.")
@@ -64,9 +63,7 @@ def choose_practice_set():
 def menu_start():
     print(colorama.Fore.MAGENTA + "Welcome!")
     practice_set = choose_practice_set()
-
     size = get_size_of_output()
-
     print(f"For back to the menu, type {colorama.Fore.RED}'finish'\n")
     return practice_set, size
 
@@ -77,21 +74,21 @@ def generate_rand_string(input_set, size):
 def typing_practice_loop(practice_set, size):
     rand_string = generate_rand_string(practice_set, size)
     while True:
-            print(rand_string)
-            practice_input = input()
+        print(rand_string)
+        practice_input = input()
 
-            if practice_input == 'finish':
-                break
-            elif practice_input == rand_string:
-                print(f"{colorama.Fore.GREEN}{CHECK_MARK}")
-                rand_string = generate_rand_string(practice_set, size)
-            else:
-                print(f"{colorama.Fore.RED}X")
+        if practice_input == 'finish':
+            break
+        elif practice_input == rand_string:
+            print(f"{colorama.Fore.GREEN}{CHECK_MARK}")
+            rand_string = generate_rand_string(practice_set, size)
+        else:
+            print(f"{colorama.Fore.RED}X")
 
 def main():
     while True:
         practice_set, size = menu_start()
         typing_practice_loop(practice_set, size)
-    
+
 if __name__ == "__main__":
     main()
