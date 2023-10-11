@@ -41,8 +41,8 @@ def get_size_of_output():
         size = int(input())
     return size
 
-def menu_start():
-    print(colorama.Fore.MAGENTA + "Welcome!\nChoose one of the options below:")
+def choose_practice_set():
+    print("Choose one of the options below:")
     print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Numbers + Signs\n\t3. Custom list\n\t4. Exit")
 
     menu_selection = int(input())
@@ -58,6 +58,12 @@ def menu_start():
         practice_set = get_custom_char_set()
     elif menu_selection == 4:
         exit()
+
+    return practice_set
+
+def menu_start():
+    print(colorama.Fore.MAGENTA + "Welcome!")
+    practice_set = choose_practice_set()
 
     size = get_size_of_output()
 
