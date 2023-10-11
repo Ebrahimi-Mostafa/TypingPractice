@@ -35,7 +35,7 @@ def get_custom_char_set():
 
 def menu_start():
     print(colorama.Fore.MAGENTA + "Welcome!\nChoose one of the options below:")
-    print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Both of them\n\t3. Custom list\n\t4. Exit")
+    print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Numbers + Signs\n\t3. Custom list\n\t4. Exit")
 
     menu_selection = int(input())
     practice_set = []
