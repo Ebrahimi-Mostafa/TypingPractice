@@ -5,7 +5,7 @@ import colorama
 # Unicode CHECK MARK symbol
 CHECK_MARK = "\u2713"
 
-# Initialize colorama for colorful text printing
+# Reset color after each print
 colorama.init(autoreset=True)
 
 NUMBERS = '1234567890'
