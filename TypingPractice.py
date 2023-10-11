@@ -33,6 +33,14 @@ def get_custom_char_set():
     print(colorama.Fore.YELLOW + '\nYou chose ' + str(custom_set))
     return custom_set
 
+def get_size_of_output():
+    print(colorama.Fore.CYAN + "Enter the size of random word:")
+    size = int(input())
+    while size <= 0:
+        print(colorama.Fore.RED + "Size must be a positive integer.")
+        size = int(input())
+    return size
+
 def menu_start():
     print(colorama.Fore.MAGENTA + "Welcome!\nChoose one of the options below:")
     print(colorama.Fore.CYAN + "\t0. Numbers\n\t1. Signs\n\t2. Numbers + Signs\n\t3. Custom list\n\t4. Exit")
@@ -51,11 +59,7 @@ def menu_start():
     elif menu_selection == 4:
         exit()
 
-    print(colorama.Fore.CYAN + "Enter the size of random word:")
-    size = int(input())
-    while size <= 0:
-        print(colorama.Fore.RED + "Size must be a positive integer.")
-        size = int(input())
+    size = get_size_of_output()
 
     print(f"For back to the menu, type {colorama.Fore.RED}'finish'\n")
     return practice_set, size
