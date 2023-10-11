@@ -74,12 +74,9 @@ def generate_rand_string(input_set, size):
     chosen_element = random.choices(input_set, k=size)
     return ''.join(chosen_element)
 
-def main():
+def typing_practice_loop(practice_set, size):
+    rand_string = generate_rand_string(practice_set, size)
     while True:
-        practice_set, size = menu_start()
-        rand_string = generate_rand_string(practice_set, size)
-
-        while True:
             print(rand_string)
             practice_input = input()
 
@@ -91,5 +88,10 @@ def main():
             else:
                 print(f"{colorama.Fore.RED}X")
 
+def main():
+    while True:
+        practice_set, size = menu_start()
+        typing_practice_loop(practice_set, size)
+    
 if __name__ == "__main__":
     main()
